@@ -1,0 +1,79 @@
+.fetch-tweets-rotator {
+	overflow-y: hidden ;	
+	overflow-x: hidden ;
+	
+	/*  display: block;
+	width: 100%;  */
+	height: 100%;
+}
+.fetch-tweets-rotator-items {
+	/* position: static ;
+	width: 100% ; */
+	height: 100%;
+}
+.fetch-tweets-rotator-item {
+	display: inline-block ; 
+	padding-bottom: 0.5em ;	
+	width: 100% ;
+	
+}
+.fetch-tweets-rotator-retweet {
+}
+.fetch-tweets-rotator-main {
+	padding: 0 0.8em ;
+
+}
+.fetch-tweets-rotator-heading {
+	vertical-align: text-top ;
+	line-height: 1em ;
+}
+.fetch-tweets-rotator-profile-image {
+
+}
+.fetch-tweets-rotator-user-name {
+	margin-bottom: 0.3em ;
+	display: inline-block ; 
+
+}
+.fetch-tweets-rotator-user-name a {
+	text-decoration: none ;
+}
+.fetch-tweets-rotator-tweet-created-at {
+	display: inline ;
+
+	float: right ; 
+	font-size: smaller ; 
+	margin-left: 1em ;
+}
+.fetch-tweets-rotator-tweet-created-at a {
+	text-decoration: none ;
+}
+.fetch-tweets-rotator-body {
+
+}
+.fetch-tweets-rotator-text {
+	margin-bottom: 0 ;
+}
+div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
+	margin-bottom: 0 ;
+}
+.fetch-tweets-rotator-retweet-credit {
+	float: right ;
+	margin-left: 0.5em ;
+	font-size: smaller ;
+}
+.fetch-tweets-rotator-retweet-credit a {
+	text-decoration: none ;
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-external-media {
+	clear: both ;
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-media-photo {
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-external-media img,
+.fetch-tweets-rotator .fetch-tweets-rotator-media-photo img {
+	max-width: 100% ;
+	height: auto ;	
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-media {
+}

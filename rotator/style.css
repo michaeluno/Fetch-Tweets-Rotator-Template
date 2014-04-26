@@ -1,0 +1,51 @@
+/*
+Template Name: Rotator
+Template URI: http://en.michaeluno.jp
+Author: Michael Uno
+Author URI: http://en.michaeluno.jp
+Description: Rotates tweets.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: default
+Text Domain: fetch-tweets-rotator-template
+*/
+
+
+
+.fetch-tweets-rotator {
+	height: 100%;	/* required to have the background-color take effect. */
+}
+
+.fetch-tweets-rotator-intent-buttons {
+	float: right ;
+	font-size: smaller ;
+	margin: 0 ;
+	padding: 0 ;		
+}
+.fetch-tweets-rotator-intent-buttons a ,
+.fetch-tweets-rotator-intent-icon a:hover {
+	text-decoration: none ;
+}
+.fetch-tweets-rotator-intent-buttons li {
+	display: inline ;
+}
+ul.fetch-tweets-rotator-intent-buttons li {
+	margin-left: 0 ;
+	list-style-type: none ;
+}
+.fetch-tweets-rotator-intent-buttons-text {
+	vertical-align: middle ;
+}
+
+.fetch-tweets-rotator-intent-icon {
+	display: inline-block ;
+	vertical-align: middle ;
+	width: 16px ;
+	height: 16px ;
+	background-position: 0 0 ;
+	background-repeat:no-repeat ;
+}
+.fetch-tweets-rotator-intent-icon:hover  {
+	background-position: -16px 0 ;
+}
