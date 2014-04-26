@@ -36,10 +36,10 @@ class FetchTweets_Template_Rotator_Base {
 			3 => array( 'size' => '', 'unit' => 'px' ),	// left
 		),
 		'paddings'				=> array(
-			0 => array( 'size' => '', 'unit' => 'px' ),	// top
-			1 => array( 'size' => '', 'unit' => 'px' ),	// right
-			2 => array( 'size' => '', 'unit' => 'px' ),	// bottom
-			3 => array( 'size' => '', 'unit' => 'px' ),	// left
+			0 => array( 'size' => 1, 	'unit' => 'em' ),	// top
+			1 => array( 'size' => 1, 	'unit' => 'em' ),	// right
+			2 => array( 'size' => 0.8,	'unit' => 'em' ),	// bottom
+			3 => array( 'size' => 1, 	'unit' => 'em' ),	// left
 		),	
 	);	
 
