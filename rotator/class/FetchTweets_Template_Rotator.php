@@ -67,7 +67,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 					'class'	=>	$this->_sBaseClassSelector . '-items',
 					'style'	=>	$this->_generateStyleAttribute(
 						array(
-							// 'display'	=>	1 === $i ? 'block' : 'none',
+							'display'	=>	1 === $i ? 'block' : 'none',
 							'padding'			=>	$this->_getTRBL( $aArgs['paddings'][ 0 ], $aArgs['paddings'][ 1 ], $aArgs['paddings'][ 2 ], $aArgs['paddings'][ 3 ] ),
 						)
 					),
