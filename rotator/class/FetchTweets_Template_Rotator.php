@@ -327,18 +327,6 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 				} );
 			</script>"; 
 	
-		// return "
-			// <script type='text/javascript'>		
-				// jQuery( document).ready( function(){ jQuery( '#{$sIDAttribute}' ).jshowoff(
-					// { 
-						// changeSpeed: 1500,
-						// speed: 5000, 
-						// links: false,
-						// controls: true,
-						// effect: 'fade',	// 'slideLeft', 'fade' or 'none'
-					// }
-				// ); } );
-			// </script>";
 	}
 	
 }
