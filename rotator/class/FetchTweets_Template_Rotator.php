@@ -163,6 +163,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 					'style'	=>	$this->_generateStyleAttribute(	
 						array(
 							'max-width'	=>	$aArgs['avatar_size'] . 'px',
+							'border-radius'	=>	'5px',
 						)
 					),						
 				);
