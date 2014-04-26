@@ -1,4 +1,4 @@
-=== Fetch Tweets - Hashtag Cloud ===
+=== Fetch Tweets - Rotator Template ===
 Contributors: Michael Uno, miunosoft
 Donate link: http://michaeluno.jp/en/donate
 Tags: twitter, template, fetch tweets, tweets, tweet, sidebar, slider, rotate, rotator, random
