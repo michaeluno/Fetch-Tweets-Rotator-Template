@@ -26,10 +26,13 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 				)
 			),
 		);
+		
+		add_action( 'wp_footer', array( $this, '_replyToInsertScript' ) );
 		return "<div " . $this->_generateAttributes( $_aAttributes ) . "/>" . PHP_EOL
 				. $this->_getTweets( $aTweets, $_aArgs ) . PHP_EOL
 			. "</di>" . PHP_EOL
-			. $this->_getScript( $this->_sIDAttribute, $_aArgs ) . PHP_EOL;
+			// . $this->_getScript( $this->_sIDAttribute, $_aArgs ) . PHP_EOL
+			;
 		
 	}
 				
@@ -301,6 +304,9 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 				. "</li>";
 				
 			}
+	public function _replyToInsertScript() {
+		echo $this->_getScript( $this->_sIDAttribute, $this->_aArgs ) . PHP_EOL;
+	}
 	private function _getScript( $sIDAttribute, $aArgs ) {
 
 		return "
