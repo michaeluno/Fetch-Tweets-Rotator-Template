@@ -17,35 +17,41 @@ Text Domain: fetch-tweets-rotator-template
 	height: 100%;	/* required to have the background-color take effect. */
 }
 
+.fetch-tweets-rotator a {
+	text-decoration: none !important;
+}
+
+/**
+ * Intent Buttons
+ */
 .fetch-tweets-rotator-intent-buttons {
-	float: right ;
-	font-size: smaller ;
-	margin: 0 ;
-	padding: 0 ;		
+	float: right !important;
+	font-size: smaller !important;
+	margin: 0 !important;
+	padding: 0 !important;		
 }
 .fetch-tweets-rotator-intent-buttons a ,
 .fetch-tweets-rotator-intent-icon a:hover {
-	text-decoration: none ;
+	text-decoration: none !important;
 }
 .fetch-tweets-rotator-intent-buttons li {
-	display: inline ;
+	display: inline !important;
 }
 ul.fetch-tweets-rotator-intent-buttons li {
-	margin-left: 0 ;
-	list-style-type: none ;
+	margin-left: 0 !important;
+	list-style-type: none !important;
 }
 .fetch-tweets-rotator-intent-buttons-text {
-	vertical-align: middle ;
+	vertical-align: middle !important;
 }
-
 .fetch-tweets-rotator-intent-icon {
-	display: inline-block ;
-	vertical-align: middle ;
-	width: 16px ;
-	height: 16px ;
-	background-position: 0 0 ;
-	background-repeat:no-repeat ;
+	display: inline-block !important;
+	vertical-align: middle !important;
+	width: 16px !important;
+	height: 16px !important;
+	background-position: 0 0 !important;
+	background-repeat:no-repeat !important;
 }
 .fetch-tweets-rotator-intent-icon:hover  {
-	background-position: -16px 0 ;
+	background-position: -16px 0 !important;
 }

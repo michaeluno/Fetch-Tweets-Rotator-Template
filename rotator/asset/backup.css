@@ -35,9 +35,7 @@
 	display: inline-block ; 
 
 }
-.fetch-tweets-rotator-user-name a {
-	text-decoration: none ;
-}
+
 .fetch-tweets-rotator-tweet-created-at {
 	display: inline ;
 
