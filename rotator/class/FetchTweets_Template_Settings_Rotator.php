@@ -19,6 +19,32 @@ class FetchTweets_Template_Settings_Rotator extends FetchTweets_Template_Setting
 	protected $sTemplateName = 'Rotator';	// the template name
 	protected $sSectionID = 'template_rotator';
 	
+	
+	public function  __construct( $sTemplateDirPath='' ) {
+		
+		parent::__construct( $sTemplateDirPath );
+		
+		$_sPluginBaseName = plugin_basename( FETCHTWEETS_ROTATOR_TEMPLETE_PATH ); 
+		add_filter( "plugin_action_links_{$_sPluginBaseName}", array( $this, '_replyToInsertPluginLink' ) );		
+		
+	}
+		public function _replyToInsertPluginLink( $aLinks ) {
+				
+			if ( ! class_exists( 'FetchTweets_Commons' ) ) {
+				return $aLinks;
+			}
+			
+			$_sSettingPageURL = admin_url( 
+				'edit.php?post_type=' . FetchTweets_Commons::PostTypeSlug 
+				. '&page=' . $this->sParentPageSlug
+				. '&tab=' . $this->sParentTabSlug
+			);
+
+			array_unshift( $aLinks, "<a href='{$_sSettingPageURL}'>" . __( 'Settings', 'fetch-tweets' ) . "</a>" ); 
+			return $aLinks; 
+			
+		}	
+			
 	/*
 	 * Modify these methods. 
 	 * This defines form sections. Set the section ID and the description here.
