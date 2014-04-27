@@ -328,7 +328,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 						nextSelector: '#pronext',
 						prevSelector: '#proprev',
 						randomStart: {$aArgs['randomStart']},
-  						
+  						autoHover: true,
 					}
 				)
 				} );
