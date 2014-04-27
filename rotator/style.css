@@ -25,7 +25,7 @@ Text Domain: fetch-tweets-rotator-template
  * Intent Buttons
  */
 .fetch-tweets-rotator-intent-buttons {
-	float: right !important;
+	text-align: right !important;
 	font-size: smaller !important;
 	margin: 0 !important;
 	padding: 0 !important;		
@@ -60,7 +60,7 @@ ul.fetch-tweets-rotator-intent-buttons li {
  * Body
  */
 .fetch-tweets-rotator-body {
-	display: inline-block !important;	/* keep the intent buttons together */
+	display: block !important;	/* keep the intent buttons together */
 	margin-bottom: 1em !important;	/* a margin between tweet items */
 }
 /**
