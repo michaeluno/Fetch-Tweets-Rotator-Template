@@ -55,3 +55,33 @@ ul.fetch-tweets-rotator-intent-buttons li {
 .fetch-tweets-rotator-intent-icon:hover  {
 	background-position: -16px 0 !important;
 }
+
+/**
+ * Body
+ */
+.fetch-tweets-rotator-body {
+	display: inline-block !important;	/* keep the intent buttons together */
+	margin-bottom: 1em !important;	/* a margin between tweet items */
+}
+/**
+ * Tweet text 
+ */
+div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
+	margin-bottom: 0 ;
+}
+
+/**
+ * Embedded media and images
+ */
+.fetch-tweets-rotator .fetch-tweets-rotator-external-media {
+	clear: both ;
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-media-photo {
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-external-media img,
+.fetch-tweets-rotator .fetch-tweets-rotator-media-photo img {
+	max-width: 100% !important;
+	height: auto !important;	
+}
+.fetch-tweets-rotator .fetch-tweets-rotator-media {
+}

@@ -46,15 +46,8 @@
 .fetch-tweets-rotator-tweet-created-at a {
 	text-decoration: none ;
 }
-.fetch-tweets-rotator-body {
 
-}
-.fetch-tweets-rotator-text {
-	margin-bottom: 0 ;
-}
-div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
-	margin-bottom: 0 ;
-}
+
 .fetch-tweets-rotator-retweet-credit {
 	float: right ;
 	margin-left: 0.5em ;
@@ -62,16 +55,4 @@ div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
 }
 .fetch-tweets-rotator-retweet-credit a {
 	text-decoration: none ;
-}
-.fetch-tweets-rotator .fetch-tweets-rotator-external-media {
-	clear: both ;
-}
-.fetch-tweets-rotator .fetch-tweets-rotator-media-photo {
-}
-.fetch-tweets-rotator .fetch-tweets-rotator-external-media img,
-.fetch-tweets-rotator .fetch-tweets-rotator-media-photo img {
-	max-width: 100% ;
-	height: auto ;	
-}
-.fetch-tweets-rotator .fetch-tweets-rotator-media {
 }
