@@ -85,3 +85,12 @@ div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
 }
 .fetch-tweets-rotator .fetch-tweets-rotator-media {
 }
+
+
+/**
+ * Some fixes
+ */
+.bx-wrapper .bx-viewport  {
+	background-color: transparent;
+	border: 5px solid transparent;
+}
