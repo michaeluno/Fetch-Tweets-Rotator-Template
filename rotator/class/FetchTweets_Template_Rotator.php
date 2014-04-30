@@ -12,27 +12,32 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 	public function getOutput( array $aTweets ) {
 		
 		$_aArgs = $this->_aArgs;
-		$_aAttributes = array(
-			'class'	=>	$this->_sBaseClassSelector, 
-			'id'	=>	$this->_sIDAttribute,
+// var_dump( $_aArgs );
+		$_aAttributes_Wrapper = array(
+			'class'	=>	$this->_sBaseClassSelector . '_wrapper',
 			'style'	=>	$this->_generateStyleAttribute(
 				array(
-					// 'max-width'			=>	$this->_getSize( $_aArgs['max_width'] ),
-					// 'max-height'		=>	$this->_getSize( $_aArgs['max_height'] ),
+					'max-width'			=>	$this->_getSize( $_aArgs['max_width'] ),
+					'max-height'		=>	$this->_getSize( $_aArgs['max_height'] ),
 					'background-color'	=>	$_aArgs['background_color'],
-					'margin'			=>	$this->_getTRBL( $this->_aArgs['margins'][ 0 ], $this->_aArgs['margins'][ 1 ], $this->_aArgs['margins'][ 2 ], $this->_aArgs['margins'][ 3 ] ),
-					// 'padding'			=>	$this->_getTRBL( $this->_aArgs['paddings'][ 0 ], $this->_aArgs['paddings'][ 1 ], $this->_aArgs['paddings'][ 2 ], $this->_aArgs['paddings'][ 3 ] ),
 					'font-size'			=>	$this->_getSize( $_aArgs['font_size'] ),
+					'margin'			=>	$this->_getTRBL( $_aArgs['margins'][ 0 ], $_aArgs['margins'][ 1 ], $_aArgs['margins'][ 2 ], $_aArgs['margins'][ 3 ] ),					
 				)
 			),
 		);
+
+		$_aAttributes = array(
+			'class'	=>	$this->_sBaseClassSelector, 
+			'id'	=>	$this->_sIDAttribute,
+		);
 		
 		add_action( 'wp_footer', array( $this, '_replyToInsertScript' ) );
-		return "<div " . $this->_generateAttributes( $_aAttributes ) . "/>" . PHP_EOL
-				. $this->_getTweets( $aTweets, $_aArgs ) . PHP_EOL
-			. "</di>" . PHP_EOL
-			// . $this->_getScript( $this->_sIDAttribute, $_aArgs ) . PHP_EOL
-			;
+		return "<div " . $this->_generateAttributes( $_aAttributes_Wrapper ) . "/>" . PHP_EOL
+				. "<div " . $this->_generateAttributes( $_aAttributes ) . "/>" . PHP_EOL
+					. $this->_getTweets( $aTweets, $_aArgs ) . PHP_EOL
+				. "</div>" . PHP_EOL
+			. "</div>" . PHP_EOL;
+
 		
 	}
 				
