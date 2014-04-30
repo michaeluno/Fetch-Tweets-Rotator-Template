@@ -100,7 +100,7 @@ class FetchTweets_Template_Rotator_Base {
 			$aArgs['paddings'][ 3 ]['unit']		= isset( $aArgs['padding_left_unit'] )		? $aArgs['padding_left_unit']		: $aArgs['paddings'][ 3 ]['unit'];
 
 			$aArgs['intent_script']				= isset( $aArgs['intent_button_script'] ) ? $aArgs['intent_button_script'] : $aArgs['intent_script'];
-						
+										
 			return $aArgs;
 			
 		}

@@ -88,9 +88,13 @@ div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
 }
 
 /**
- * Some fixes
+ * Some fixes for bxSlider
  */
 .bx-wrapper .bx-viewport  {
 	background-color: transparent;
 	border: 5px 5px solid transparent;
+	
+	box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px 1px #ccc\9; /* IE only */ 
+	
 }
