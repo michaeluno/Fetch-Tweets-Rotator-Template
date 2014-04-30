@@ -32,5 +32,5 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 
 == Change log ==
 
-= 1.0.0 - 04/26/2014 =
+= 1.0.0 - 05/01/2014 =
 Initial release.
