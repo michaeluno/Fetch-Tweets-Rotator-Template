@@ -22,8 +22,8 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 
 = Install = 
 
-1. Install the template plugin - this template comes as a WordPress plugin. You just upload the zip file you downloaded via Dashboad -> Plugins -> Add New -> Upload. And activate the plugin This will install the template.
-2. Activate the template after install - Go to *Fetch Tweets* -> *Templates* -> *Installed Templates*. You should see a template named "*Hashtag Colud*." Click on the Activate link to activate the template. 
+1. Install the template plugin - this template comes as a WordPress plugin. You just upload the zip file you downloaded via Dashboard -> Plugins -> Add New -> Upload. And activate the plugin This will install the template.
+2. Activate the template after install - Go to *Fetch Tweets* -> *Templates* -> *Installed Templates*. You should see a template named "*Rotator*." Click on the Activate link to activate the template. 
 
 == Screenshots ==
 
