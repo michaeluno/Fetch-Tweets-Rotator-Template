@@ -78,6 +78,7 @@ div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
 }
 .fetch-tweets-rotator .fetch-tweets-rotator-media-photo {
 }
+.fetch-tweets-rotator .fetch-tweets-external-media img,
 .fetch-tweets-rotator .fetch-tweets-rotator-external-media img,
 .fetch-tweets-rotator .fetch-tweets-rotator-media-photo img {
 	max-width: 100% !important;
@@ -86,11 +87,10 @@ div.fetch-tweets-rotator-body p.fetch-tweets-rotator-text {
 .fetch-tweets-rotator .fetch-tweets-rotator-media {
 }
 
-
 /**
  * Some fixes
  */
 .bx-wrapper .bx-viewport  {
 	background-color: transparent;
-	border: 5px solid transparent;
+	border: 5px 5px solid transparent;
 }
