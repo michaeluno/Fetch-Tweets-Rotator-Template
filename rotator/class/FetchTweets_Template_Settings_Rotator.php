@@ -3,7 +3,7 @@
  * Adds a setting tab in the Fetch Tweets admin pages. 
  * 
  * If you are modifying the template to create your own, modify this extended class.
- * The setting arrays follows the specifications of Admin Page Framework v2. 
+ * The setting arrays follows the specifications of Admin Page Framework v3. 
  * 
  * @package		Fetch Tweets
  * @subpackage	Rotator Template
@@ -294,16 +294,12 @@ class FetchTweets_Template_Settings_Rotator extends FetchTweets_Template_Setting
 			'label' => array(
 				'avatar'			=> __( 'Profile Image', 'fetch-tweets' ),
 				'user_name'			=> __( 'User Name', 'fetch-tweets' ),
-				// 'follow_button' => __( 'Follow Button', 'fetch-tweets' ),
-				// 'user_description' => __( 'User Description', 'fetch-tweets' ),
 				'time'				=> __( 'Time', 'fetch-tweets' ),
 				'intent_buttons'	=> __( 'Intent Buttons', 'fetch-tweets' ),
 			),
 			'default' => array(
 				'avatar'			=> true,
 				'user_name'			=> true,
-				// 'follow_button' => true,
-				// 'user_description' => true,
 				'time'				=> true,
 				'intent_buttons'	=> true,
 			),
