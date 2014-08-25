@@ -1,13 +1,13 @@
 <?php
 /* 
-	Plugin Name: Fetch Tweets - Rotator Template
-	Plugin URI: http://en.michaeluno.jp/fetch-tweets
-	Description: Rotates tweets of the Fetch Tweets plugin.
-	Author: Michael Uno
-	Author URI: http://michaeluno.jp
-	Version: 1.0.1
-	Requirements: PHP 5.2.4 or above, WordPress 3.3 or above.
-	Text Domain: fetch-tweets-rotator-template
+	Plugin Name:    Fetch Tweets - Rotator Template
+	Plugin URI:     http://en.michaeluno.jp/fetch-tweets
+	Description:    Rotates tweets of the Fetch Tweets plugin.
+	Author:         Michael Uno
+	Author URI:     http://michaeluno.jp
+	Version:        1.0.2
+	Requirements:   PHP 5.2.4 or above, WordPress 3.3 or above.
+	Text Domain:    fetch-tweets-rotator-template
 */ 
 
 define( 'FETCHTWEETS_ROTATOR_TEMPLETE_PATH', __FILE__ );
