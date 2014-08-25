@@ -11,10 +11,8 @@ Tags: default
 Text Domain: fetch-tweets-rotator-template
 */
 
-
-
 .fetch-tweets-rotator {
-	height: 100%;	/* required to have the background-color take effect. */
+	height: 100%;	/* required to have the background-color take effect. */ 
 }
 
 .fetch-tweets-rotator a {
