@@ -15,7 +15,7 @@ define( 'FETCHTWEETS_ROTATOR_TEMPLETE_PATH', __FILE__ );
 /**
  * Adds the template directory to the passed array.
  * 
- * @remark			use DIRECTORY_SEPARATOR instead of backslash to support various OSes.
+ * @remark  use DIRECTORY_SEPARATOR instead of forward slash.
  */
 function FetchTweets_AddTemplateDirPath_Rotator( $aDirPaths ) {
 	
@@ -24,3 +24,15 @@ function FetchTweets_AddTemplateDirPath_Rotator( $aDirPaths ) {
 	
 }
 add_filter( 'fetch_tweets_filter_template_directories', 'FetchTweets_AddTemplateDirPath_Rotator' );
+
+/**
+ * Make sure to deactivate the template 
+ * @deprecated
+ */
+function FetchTweets_RotatorTemplate_Deactivation() {
+    
+	unset( $GLOBALS['oFetchTweets_Option']->aOptions['arrTemplates'][ $strDirSlug ] );	// the option array only stores active templates.
+	$GLOBALS['oFetchTweets_Option']->saveOptions();	
+	
+}
+// register_deactivation_hook( __FILE__, 'FetchTweets_RotatorTemplate_Deactivation' );
