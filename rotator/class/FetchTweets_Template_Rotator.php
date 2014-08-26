@@ -28,14 +28,6 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 		$_aAttributes = array(
 			'class'	=>	$this->_sBaseClassSelector, 
 			'id'	=>	$this->_sIDAttribute,
-            'style'	=>	$this->_generateStyleAttribute(
-                array( 
-                    // this padding will be removed and set to the parent wrapper container of the bxSlider script
-                    'padding'   =>	$this->_getTRBL( $_aArgs['paddings'][ 0 ], $_aArgs['paddings'][ 1 ], $_aArgs['paddings'][ 2 ], $_aArgs['paddings'][ 3 ] ),
-                )
-            ),
-            // Store the padding. This will be referred by the slider script and applied to the container element.
-            'data-padding'  =>  $this->_getTRBL( $_aArgs['paddings'][ 0 ], $_aArgs['paddings'][ 1 ], $_aArgs['paddings'][ 2 ], $_aArgs['paddings'][ 3 ] ),
 		);
 		
 		add_action( 'wp_footer', array( $this, '_replyToInsertScript' ) );
@@ -82,7 +74,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 						array(
 							'display'   =>	1 === $i ? 'block' : 'none',
                             'padding'   =>	'0',
-                            'width'     =>  '100%',
+                            // 'width'     =>  '100%',
 						)
 					),
 				);
@@ -117,7 +109,10 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 				$_aAttributes = array(
 					'class'	=>	$this->_sBaseClassSelector . "-item" . $_sRetweetClassSelector,
 					'style'	=>	$this->_generateStyleAttribute(	
-						array()
+                        array( 
+                            // this padding will be removed and set to the parent wrapper container of the bxSlider script
+                            'padding'   =>	$this->_getTRBL( $aArgs['paddings'][ 0 ], $aArgs['paddings'][ 1 ], $aArgs['paddings'][ 2 ], $aArgs['paddings'][ 3 ] ),
+                        )
 					),
 				);
 				return "<div " . $this->_generateAttributes( $_aAttributes ) . " />" . PHP_EOL
@@ -179,7 +174,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 							'border-radius'     => '5px',                     
 						)
 					),
-                    'onerror'   =>  "this.src='" . esc_url( $_sIMGURLDefault ) . "'",    // substitute
+                    'onerror'   =>  'this.onerror=null;this.src="' . esc_url( $_sIMGURLDefault ) . '";',    // substitute
 				);
 				return "<div " . $this->_generateAttributes( $_aAttributes ) . ">" . PHP_EOL
 						. "<a target='_blank' href='" . esc_url( "https://twitter.com/{$aTweet['user']['screen_name']}", 'https' ) . "'>" . PHP_EOL
@@ -346,11 +341,9 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 						randomStart: " . ( $aArgs['randomStart'] ? 'true' : 'false' ) . ",
   						autoHover: true,
                         onSliderLoad: function ( oCurrentIndex ) {
-                            // Set the padding to the bxSlider container element 
-                            var oSlideElement = jQuery( '#{$sIDAttribute}' );
-                            var sPaddingTop = oSlideElement.css( 'padding', '0' );
-                            oSlideElement.parent().css( 'padding', oSlideElement.attr( 'data-padding' ) );
                         },                                               
+                        onSliderBefore: function ( oSlideElement, oOldIndex, oNewIndex ) {
+                        },                             
 					});
 				});
 			</script>"; 
