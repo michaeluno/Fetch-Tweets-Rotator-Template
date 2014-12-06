@@ -34,6 +34,7 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 
 = 1.0.4 - 12/06/2014 =
 - Made it compatible with [Fetch Tweets](https://wordpress.org/support/plugin/fetch-tweets) v2.4.0.
+- Changed the default height to `100%` from `400px`.
 
 = 1.0.3 - 08/27/2014 =
 - Fixed a bug that when an image fails to load, the slider stalled.
