@@ -3,8 +3,8 @@ Contributors:       Michael Uno, miunosoft
 Donate link:        http://michaeluno.jp/en/donate
 Tags:               twitter, template, fetch tweets, tweets, tweet, sidebar, slider, rotate, rotator, random
 Requires at least:  3.3
-Tested up to:       4.0.1
-Stable tag:         1.0.3
+Tested up to:       4.1
+Stable tag:         1.0.4
 License:            GPLv2 or later
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 2. ***Setting Page***
 
 == Change log ==
+
+= 1.0.5 =
+- Fixed a jQuery dependency and compatibility issue.
 
 = 1.0.4 - 12/06/2014 =
 - Made it compatible with [Fetch Tweets](https://wordpress.org/support/plugin/fetch-tweets) v2.4.0.
