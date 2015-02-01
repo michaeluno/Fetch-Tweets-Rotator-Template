@@ -11,9 +11,8 @@
 ;(function($){
 
     $( document ).ready( function(){ 
-    
-        if ( undefined === fetch_tweets_rotator_template ) {
-            console.log( 'Fetch Tweets - Rotator Template: the argument object is not set.' );
+        
+        if ( 'undefined' === typeof fetch_tweets_rotator_template ) {
             return;
         }
     
