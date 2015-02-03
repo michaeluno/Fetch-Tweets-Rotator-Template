@@ -61,13 +61,15 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                 if ( ! isset( $_aTweet['user'] ) ) { continue; }
                 
                 // Check if it's a retweet.
-                $_fIsRetweet = isset( $_aTweet['retweeted_status']['text'] );
-                if ( $_fIsRetweet && ! $aArgs['include_rts'] ) { continue; }    // if disabled skip.
+                $_bIsRetweet = isset( $_aTweet['retweeted_status']['text'] );
+                if ( $_bIsRetweet && ! $aArgs['include_rts'] ) { continue; }    // if disabled skip.
                 
-                $_aTweet = $_fIsRetweet ? $_aTweet['retweeted_status'] : $_aTweet;
+                $_aTweet = $_bIsRetweet 
+                    ? $_aTweet['retweeted_status'] + $_aTweet // merge with the top level elements for media elements
+                    : $_aTweet;
                 
                 // Insert a tweet into the output array.
-                $_aOutput[] = $this->_getTweet( $_aTweet, $aArgs, $_fIsRetweet );
+                $_aOutput[] = $this->_getTweet( $_aTweet, $aArgs, $_bIsRetweet );
                 
             }
             
@@ -86,8 +88,8 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                     'class'    =>    $this->_sBaseClassSelector . '-items',
                     'style'    =>    $this->_generateStyleAttribute(
                         array(
-                            'display'   =>    1 === $i ? 'block' : 'none',
-                            'padding'   =>    '0',
+                            'display'   => 1 === $i ? 'block' : 'none',
+                            'padding'   => '0',
                             // 'width'     =>  '100%',
                         )
                     ),
@@ -117,9 +119,9 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
             /**
              * Returns an individual tweet output.
              */
-            private function _getTweet( array $aTweet, array $aArgs, $fIsRetweet ) {
+            private function _getTweet( array $aTweet, array $aArgs, $bIsRetweet ) {
                 
-                $_sRetweetClassSelector = $fIsRetweet ? " {$this->_sBaseClassSelector}-retweet" : '';                
+                $_sRetweetClassSelector = $bIsRetweet ? " {$this->_sBaseClassSelector}-retweet" : '';                
                 $_aAttributes = array(
                     'class'    => $this->_sBaseClassSelector . "-item" . $_sRetweetClassSelector,
                     'style'    => $this->_generateStyleAttribute(    
@@ -130,16 +132,16 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                     ),
                 );
                 return "<div " . $this->_generateAttributes( $_aAttributes ) . " />" . PHP_EOL
-                        . $this->_getTweetContent( $aTweet, $aArgs, $fIsRetweet ) . PHP_EOL
+                        . $this->_getTweetContent( $aTweet, $aArgs, $bIsRetweet ) . PHP_EOL
                     . "</div>" . PHP_EOL;
                 
             }
             
     
-            private function _getTweetContent( array $aTweet, array $aArgs, $fIsRetweet ) {
+            private function _getTweetContent( array $aTweet, array $aArgs, $bIsRetweet ) {
                 
                 $_aOutput   = array();        
-                $_aOutput[] = $this->_getMain( $aTweet, $aArgs, $fIsRetweet );
+                $_aOutput[] = $this->_getMain( $aTweet, $aArgs, $bIsRetweet );
                 return implode( PHP_EOL, $_aOutput );
                 
             }
@@ -197,7 +199,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
 
             }            
         
-            private function _getMain( array $aTweet, array $aArgs, $fIsRetweet ) {
+            private function _getMain( array $aTweet, array $aArgs, $bIsRetweet ) {
                 
                 $_aInlineStyle = array();
                 // if ( $aArgs['visibilities']['avatar'] && $aArgs['avatar_size'] > 0 ) {
@@ -212,7 +214,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                     ) . ">" . PHP_EOL
                         . $this->_getAvatar( $aTweet, $aArgs ) . PHP_EOL
                         . $this->_getHeading( $aTweet, $aArgs ) . PHP_EOL
-                        . $this->_getBody( $aTweet, $aArgs, $fIsRetweet ) . PHP_EOL
+                        . $this->_getBody( $aTweet, $aArgs, $bIsRetweet ) . PHP_EOL
                     . "</div>" . PHP_EOL;
                 
             }
@@ -258,15 +260,15 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                     
                     
                 }                
-            private function _getBody( array $aTweet, array $aArgs, $fIsRetweet ) {
+            private function _getBody( array $aTweet, array $aArgs, $bIsRetweet ) {
                 
                 return "<div class='{$this->_sBaseClassSelector}-body'>" . PHP_EOL
-                        . $this->_getText( $aTweet, $aArgs, $fIsRetweet ) . PHP_EOL
+                        . $this->_getText( $aTweet, $aArgs, $bIsRetweet ) . PHP_EOL
                         . $this->_getIntentButtons( $aTweet, $aArgs ) . PHP_EOL
                     . "</div>" . PHP_EOL;
         
             }
-            private function _getText( array $aTweet, array $aArgs, $fIsRetweet ) {
+            private function _getText( array $aTweet, array $aArgs, $bIsRetweet ) {
                 
                 return "<p class='{$this->_sBaseClassSelector}-text'>" . PHP_EOL
                         . trim( $aTweet['text'] ) . PHP_EOL
@@ -275,20 +277,20 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                         ? $aTweet['_media'] . PHP_EOL
                         : ''
                     )
-                    . $this->_getRetweetInfo( $aTweet, $aArgs, $fIsRetweet ) . PHP_EOL
+                    . $this->_getRetweetInfo( $aTweet, $aArgs, $bIsRetweet ) . PHP_EOL
                     ;
         
             }
-                private function _getRetweetInfo( array $aTweet, array $aArgs, $fIsRetweet ) {
+                private function _getRetweetInfo( array $aTweet, array $aArgs, $bIsRetweet ) {
                     
-                    if ( ! $fIsRetweet ) { 
+                    if ( ! $bIsRetweet ) { 
                         return ''; 
                     }
                     
                     return "<span class='{$this->_sBaseClassSelector}-retweet-credit'>" . PHP_EOL
                             . __( 'Retweeted by', 'fetch-tweets' ) . PHP_EOL
-                            . "<a target='_blank' href='" . esc_url( "https://twitter.com/{$_aDetail['user']['screen_name']}" ) . "'>" . PHP_EOL
-                                . $_aDetail['user']['name'] . PHP_EOL
+                            . "<a target='_blank' href='" . esc_url( "https://twitter.com/{$aTweet['user']['screen_name']}" ) . "'>" . PHP_EOL
+                                . $aTweet['user']['name'] . PHP_EOL
                             . "</a>" . PHP_EOL
                         . "</span>" . PHP_EOL;
                     

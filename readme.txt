@@ -32,7 +32,8 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 
 == Change log ==
 
-= 1.0.5 =
+= 1.0.5 - 02/04/2015 =
+- Fixed a bug that media elements in retweets were not displayed.
 - Fixed a jQuery dependency and compatibility issue.
 
 = 1.0.4 - 12/06/2014 =
