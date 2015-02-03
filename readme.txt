@@ -34,6 +34,7 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 
 = 1.0.5 - 02/04/2015 =
 - Removed the `!important` notations from the CSS rules.
+- Fixed a bug that the options of intent button labels and icon did not take effect.
 - Fixed a bug that media elements in retweets were not displayed.
 - Fixed a jQuery dependency and compatibility issue.
 
