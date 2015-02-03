@@ -317,10 +317,10 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                 
                 $_sOutput = '';
                 if ( $aArgs['intent_buttons'] == 1 || $aArgs['intent_buttons'] == 2 ) {
-                    $_sOutput = "<span class='{$this->_sBaseClassSelector}-intent-icon' style='background-image: url(" . FetchTweets_Commons::getPluginURL( "asset/image/{$sIntent}_48x16.png" ) . ");' ></span>";
+                    $_sOutput .= "<span class='{$this->_sBaseClassSelector}-intent-icon' style='background-image: url(" . esc_url( FetchTweets_Commons::getPluginURL( "asset/image/{$sIntent}_48x16.png" ) ) . ");' ></span>";
                 }
                 if ( $aArgs['intent_buttons'] == 1 || $aArgs['intent_buttons'] == 3 ) {
-                    $_sOutput = "<span class='{$this->_sBaseClassSelector}-intent-buttons-text'>" . __( ucfirst( $sIntent ), 'fetch-tweets' ) . "</span>";
+                    $_sOutput .= "<span class='{$this->_sBaseClassSelector}-intent-buttons-text'>" . __( ucfirst( $sIntent ), 'fetch-tweets' ) . "</span>";
                 }
                 switch ( $sIntent ) {
                     default:

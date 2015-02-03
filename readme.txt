@@ -33,6 +33,7 @@ In order to use this template, [Fetch Tweets](http://wordpress.org/plugins/fetch
 == Change log ==
 
 = 1.0.5 - 02/04/2015 =
+- Removed the `!important` notations from the CSS rules.
 - Fixed a bug that media elements in retweets were not displayed.
 - Fixed a jQuery dependency and compatibility issue.
 
