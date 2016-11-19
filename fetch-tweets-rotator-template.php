@@ -1,15 +1,17 @@
 <?php
-/* 
-    Plugin Name:    Fetch Tweets - Rotator Template
-    Plugin URI:     http://en.michaeluno.jp/fetch-tweets
-    Description:    Rotates tweets of the Fetch Tweets plugin.
-    Author:         Michael Uno
-    Author URI:     http://michaeluno.jp
-    Version:        1.0.5
-    Requirements:   PHP 5.2.4 or above, WordPress 3.3 or above.
-    Text Domain:    fetch-tweets-rotator-template
-*/ 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+/** 
+ *  Plugin Name:    Fetch Tweets - Rotator Template
+ *  Plugin URI:     http://en.michaeluno.jp/fetch-tweets
+ *  Description:    Rotates tweets of the Fetch Tweets plugin.
+ *  Author:         Michael Uno
+ *  Author URI:     http://michaeluno.jp
+ *  Version:        1.1.0
+ *  Requirements:   PHP 5.2.4 or above, WordPress 3.3 or above.
+ *  Text Domain:    fetch-tweets-rotator-template
+ */ 
+if ( ! defined( 'ABSPATH' ) ) { 
+    exit; 
+}
 define( 'FETCHTWEETS_ROTATOR_TEMPLETE_PATH', __FILE__ );
 
 /**
@@ -19,7 +21,7 @@ define( 'FETCHTWEETS_ROTATOR_TEMPLETE_PATH', __FILE__ );
  */
 class FetchTweets_Template_Rotator_Registry_Base {
 
-    const Version        = '1.0.5'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
+    const Version        = '1.1.0'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
     const Name           = 'Fetch Tweets - Rotator Template'; // the full name.
     const ShortName      = 'Fetch Tweets Rotator'; // used for a menu title etc.
     const Description    = 'Rotates tweets of the Fetch Tweets plugin.';
