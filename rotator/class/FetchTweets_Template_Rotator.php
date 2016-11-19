@@ -254,7 +254,7 @@ class FetchTweets_Template_Rotator extends FetchTweets_Template_Rotator_Base {
                                     'href'      => esc_url( 'https://twitter.com/' . $aTweet['user']['screen_name'] . '/status/' . $aTweet['id_str'] ),
                                 )
                             ) . ">"
-                                . human_time_diff( $aTweet['created_at'], current_time('timestamp') - $this->_sGMTOffset ) . ' ' . __( 'ago', 'fetch-tweets' )
+                                . human_time_diff( strtotime( $aTweet[ 'created_at' ] ), current_time( 'timestamp' ) - $this->_sGMTOffset ) . ' ' . __( 'ago', 'fetch-tweets' )
                             . "</a>"
                         . "</span>";
                     
